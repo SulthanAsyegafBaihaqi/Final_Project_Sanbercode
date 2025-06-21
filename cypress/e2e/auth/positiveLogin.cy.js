@@ -4,7 +4,7 @@ import loginData from '../../fixtures/loginData.json';
 describe('Login test with intercept', () => {
 
   beforeEach(() => {
-    cy.intercept('POST', '/web/index.php/api/v2/dashboard/employees/action-summary').as('loginRequest');
+    cy.intercept('GET', '/web/index.php/api/v2/dashboard/employees/action-summary').as('loginRequest');
   })
 
   it('TC_Login_01 - Verif Login Valid Credentials', () => {
@@ -13,8 +13,8 @@ describe('Login test with intercept', () => {
     loginPages.fillPassword(loginData.validUser.password);
     loginPages.clickLogin();
 
-    cy.wait('@loginRequest').its('response.statusCode').shoul('eq', 200);
+    cy.wait('@loginRequest').its('response.statusCode').should('eq', 200);
 
-    cy.url().should('include' / '/dashboard');
+    cy.url().should('include', '/dashboard');
   });
 });

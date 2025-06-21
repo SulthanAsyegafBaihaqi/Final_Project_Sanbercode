@@ -14,6 +14,22 @@ class forgotPassword {
     clickLogin() {
         cy.get('button[type=submit]').click();
     }
+
+    clickForgotPassword() {
+        cy.get('.oxd-text').contains('Forgot your password?').click();
+    }
+
+    inputResetUsername(username) {
+        cy.get('input[placeholder="Username"]').type(username);
+    }
+
+    clickResetPassword() {
+        cy.get('button[type="submit"]').click();
+    }
+
+    validationResetPassword() {
+        cy.contains('Reset Password link sent successfully').should('be.visible');
+    }
 }
 
 export default new forgotPassword();

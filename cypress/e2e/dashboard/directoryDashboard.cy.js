@@ -40,5 +40,15 @@ describe('Directory Dashboard', () => {
         cy.wait('@requestDirectory').its('response.statusCode').should('eq', 200);
         dashboardPages.inputUserLocation();
         dashboardPages.searchEmployee();
-    })
+    });
+
+    it('TC_Directory_10 - Reset Directory Dashboard', () => {
+        dashboardPages.clickDirectoryMenu();
+        cy.wait('@requestDirectory').its('response.statusCode').should('eq', 200);
+        dashboardPages.inputUserLocation();
+        dashboardPages.searchEmployee();
+
+        dashboardPages.resetDirectory();
+
+    });
 });

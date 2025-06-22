@@ -30,7 +30,12 @@ class dashboardPage {
 
         cy.contains('Texas R&D').click();
     }
-    ;
+
+    resetDirectory() {
+        cy.get('button[type="reset"]').click();
+        cy.get('.orangehrm-container').should('be.visible');
+    }
+
     searchEmployee() {
         cy.get('button[type="submit"]').contains('Search').click();
     }

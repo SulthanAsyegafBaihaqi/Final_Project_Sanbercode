@@ -8,7 +8,7 @@ describe(' Login test with intercept', () => {
         cy.intercept('POST', '/web/index.php/auth/validate').as('loginMessage');
     });
 
-    it('TC_Login_02 - Verif Login invalid Password Credentials', () => {
+    it('TC_Login_02 - Verify Login invalid Password Credentials', () => {
         loginPages.visit();
         loginPages.fillUsername(loginData.invalidPassword.username);
         loginPages.fillPassword(loginData.invalidPassword.password);
@@ -19,7 +19,7 @@ describe(' Login test with intercept', () => {
         loginPages.getErrorMessage();
     });
 
-    it('TC_Login_03 - Verif Login Password Credentials', () => {
+    it('TC_Login_03 - Verify Login Invalid Username Credentials', () => {
         loginPages.visit();
         loginPages.fillUsername(loginData.invalidUsername.username);
         loginPages.fillPassword(loginData.invalidUsername.password);
@@ -30,7 +30,7 @@ describe(' Login test with intercept', () => {
         loginPages.getErrorMessage();
     });
 
-    it('TC_Login_04 - Verif Login Invalid Username & Password Credentials', () => {
+    it('TC_Login_04 - Verify Login Invalid Username & Password Credentials', () => {
         loginPages.visit();
         loginPages.fillUsername(loginData.invalidUsernamePassword.username);
         loginPages.fillPassword(loginData.invalidUsernamePassword.password);
@@ -41,7 +41,7 @@ describe(' Login test with intercept', () => {
         loginPages.getErrorMessage();
     });
 
-    it('TC_Login_05 - Verif Login Empty Username & Password', () => {
+    it('TC_Login_05 - Verify Login Empty Username & Password', () => {
         loginPages.visit();
         loginPages.fillUsername(loginData.invalidEmpty.username);
         loginPages.fillPassword(loginData.invalidEmpty.password);

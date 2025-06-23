@@ -1,13 +1,16 @@
+// import file
 import loginPages from '../../pages/loginPages';
 import loginData from '../../fixtures/loginData.json';
 
-describe('Login test with intercept', () => {
+//blok pengujian
+describe('Verification Login Fitur', () => {
 
   beforeEach(() => {
     cy.intercept('GET', '/web/index.php/api/v2/dashboard/employees/action-summary').as('loginRequest');
   })
 
-  it('TC_Login_01 - Verif Login Valid Credentials', () => {
+  //test case pengujian
+  it('TC_Login_01 - Verify Login Valid Credentials', () => {
     loginPages.visit();
     loginPages.fillUsername(loginData.validUser.username);
     loginPages.fillPassword(loginData.validUser.password);

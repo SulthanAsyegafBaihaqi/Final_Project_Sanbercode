@@ -3,7 +3,7 @@ import loginData from "../../fixtures/loginData.json";
 import directoryData from "../../fixtures/directoryData.json";
 import loginPages from "../../pages/loginPages";
 
-describe('Directory Dashboard', () => {
+describe('Verification Directory Dashboard', () => {
 
     beforeEach(() => {
 
@@ -18,7 +18,7 @@ describe('Directory Dashboard', () => {
 
     });
 
-    it('TC_Directory_07 - Search user by Employee Name in Directory Dashboard', () => {
+    it('TC_Directory_07 - Search user by Employee Name', () => {
 
         dashboardPages.clickDirectoryMenu(); //klik menu Directory
         cy.wait('@requestDirectory').its('response.statusCode').should('eq', 200);
@@ -27,7 +27,7 @@ describe('Directory Dashboard', () => {
 
     });
 
-    it('TC_Directory_08 - Search user by Job Title in Directory Dashboard', () => {
+    it('TC_Directory_08 - Search user by Job Title', () => {
 
         dashboardPages.clickDirectoryMenu();
         cy.wait('@requestDirectory').its('response.statusCode').should('eq', 200);
@@ -35,7 +35,7 @@ describe('Directory Dashboard', () => {
         dashboardPages.searchEmployee();
     });
 
-    it('TC_Directory_09 - Search user by Location in Directory Dashboard', () => {
+    it('TC_Directory_09 - Search user by Location', () => {
         dashboardPages.clickDirectoryMenu();
         cy.wait('@requestDirectory').its('response.statusCode').should('eq', 200);
         dashboardPages.inputUserLocation();
